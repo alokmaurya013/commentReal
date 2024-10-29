@@ -40,33 +40,38 @@ This project is a real-time comments system that allows users to log in, post co
    ```bash
    cd frontend
 2.**Install dependencies**:
+   ```bash
    npm install
    or
    yarn install
 3.**Start the front-end application**:
+   ```bash
    npm run dev
    or
    yarn dev
 ### Backend Setup
-1. **Navigate to the back-end directory**:
+1. **Navigate to the back-end directory**
+   ```bash
    cd backend
 2.**Install dependencies**:
+  ```bash
   npm install
   or
   yarn install
 3.**Set up the database**:
-   Create a MySQL database named comments_db (or your preferred name).
-   Run the SQL scripts located in the sql directory to create the necessary tables.
+   -Create a MySQL database named comments_db (or your preferred name).
+   -Run the SQL scripts located in the sql directory to create the necessary tables.
 4.**Start the back-end server**:
+  ```bash
   npm start
   or
   yarn start
 
 **Running the App**
-Access the front-end application at http://localhost:3000.
-The back-end API will be running on http://localhost:5000.
+-Access the front-end application at http://localhost:3000.
+-The back-end API will be running on http://localhost:5000.
 **Assumptions**
-The MySQL server is running and the database is correctly configured.
-Any necessary environment variables (like database connection strings) are set up.
+-The MySQL server is running and the database is correctly configured.
+-Any necessary environment variables (like database connection strings) are set up.
 **License**
-This project is licensed under the MIT License.
+-This project is licensed under the MIT License.
