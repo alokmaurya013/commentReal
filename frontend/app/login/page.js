@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { TextField, Button, Container } from '@mui/material';
+import { TextField, Button, Container, Typography, Box } from '@mui/material';
 import axios from 'axios';
 
 export default function LoginPage() {
@@ -18,7 +18,6 @@ export default function LoginPage() {
       // Call API to generate sessionId
       const { data } = await axios.post('/api/auth', { username }); // Use the correct endpoint
 
-
       localStorage.setItem('sessionId', data.sessionId);
       localStorage.setItem('username', username);
 
@@ -30,10 +29,18 @@ export default function LoginPage() {
   };
 
   return (
-    <Container>
-      <h2>Login</h2>
+    <Container maxWidth="sm" sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '70vh' }}>
+      <Box sx={{ textAlign: 'center', mb: 3 }}>
+        <Typography variant="h4" component="h1" gutterBottom>
+          Login
+        </Typography>
+      </Box>
       <form onSubmit={handleLogin}>
-        {error && <p style={{ color: 'red' }}>{error}</p>} {/* Display error message */}
+        {error && (
+          <Typography variant="body2" color="error" sx={{ mb: 2, textAlign: 'center' }}>
+            {error}
+          </Typography>
+        )}
         <TextField
           label="Username"
           variant="outlined"
@@ -41,8 +48,9 @@ export default function LoginPage() {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           margin="normal"
+          required
         />
-        <Button type="submit" variant="contained" color="primary">
+        <Button type="submit" variant="contained" color="primary" fullWidth sx={{ mt: 2 }}>
           Login
         </Button>
       </form>
