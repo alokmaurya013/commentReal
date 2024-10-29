@@ -1,4 +1,3 @@
-```markdown
 # Real-Time Comments System
 
 ## Overview
@@ -85,7 +84,28 @@ This project is a real-time comments system that allows users to log in, post co
 
 ## API Endpoints
 
-### 1. **Post a Comment**
+### 1. **User Login**
+   Authenticate a user and establish a session.
+
+   **Endpoint**: `POST /api/login`
+
+   **Request Body**:
+   ```json
+   {
+     "username": "User Name"
+   }
+   ```
+
+   **Response**:
+   ```json
+   {
+     "success": true,
+     "message": "User logged in successfully.",
+     "username": "User Name"
+   }
+   ```
+
+### 2. **Post a Comment**
    Post a new comment to the system.
 
    **Endpoint**: `POST /api/comments`
@@ -106,7 +126,7 @@ This project is a real-time comments system that allows users to log in, post co
    }
    ```
 
-### 2. **Fetch Comments**
+### 3. **Fetch Comments**
    Retrieve all comments from the system.
 
    **Endpoint**: `GET /api/comments`
